@@ -1,0 +1,87 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "D:\\Rapid Innovation join 16th Aug 2022\\1. Rapid Innovation join 1st Dec 2022\\hardhat-Farm\\contracts\\AutoFarmV2.sol": {
+      "lastModificationDate": 1670819649878,
+      "contentHash": "fbb26414529ab55853233bd1c7407821",
+      "sourceName": "contracts/AutoFarmV2.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.6.12"
+      ],
+      "artifacts": [
+        "AUTOToken",
+        "Address",
+        "AutoFarmV2",
+        "Context",
+        "ERC20",
+        "EnumerableSet",
+        "IERC20",
+        "IStrategy",
+        "Ownable",
+        "ReentrancyGuard",
+        "SafeERC20",
+        "SafeMath"
+      ]
+    },
+    "D:\\Rapid Innovation join 16th Aug 2022\\1. Rapid Innovation join 1st Dec 2022\\hardhat-Farm\\contracts\\Farm.sol": {
+      "lastModificationDate": 1670819652669,
+      "contentHash": "dec452643c53205ffef775ad8e74f3e8",
+      "sourceName": "contracts/Farm.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">0.6.12"
+      ],
+      "artifacts": [
+        "AutoFarm",
+        "Farm"
+      ]
+    }
+  }
+}
