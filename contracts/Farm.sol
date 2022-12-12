@@ -2,6 +2,8 @@
 pragma solidity >0.6.12;
 
 interface AutoFarm {
+    // function AUTO() external returns (address);
+
     function poolLength() external returns (uint256);
 
     function owner() external view returns (address);
@@ -62,10 +64,6 @@ contract Farm {
     ) public {
         farmContract.set(_pid, _allocPoint, _withUpdate);
     }
-
-    // function createPool() public {
-
-    // }
 
     
 }

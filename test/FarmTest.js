@@ -70,5 +70,12 @@ describe("AutoFarm Test Contract", function () {
     expect(await autoFarmContract.totalAllocPoint()).to.equal((totalAlloc - 1000));
   });
 
+  it("4. Checking AUTO token contract address.", async function () {
+
+    var tokenAddress = await autoFarmContract.AUTO();
+    var tx = await autoFarmContract.connect(impersonatedSigner).AUTO();
+    expect(await autoFarmContract.AUTO()).to.equal("0x4508ABB72232271e452258530D4Ed799C685eccb");
+  });
+
 
 });
