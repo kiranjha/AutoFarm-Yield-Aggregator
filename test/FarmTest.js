@@ -77,5 +77,13 @@ describe("AutoFarm Test Contract", function () {
     expect(await autoFarmContract.AUTO()).to.equal("0x4508ABB72232271e452258530D4Ed799C685eccb");
   });
 
+  it("5. Checking pool length.", async function () {
+
+    // var poolLen = await autoFarmContract.poolLength();
+    var tx = await autoFarmContract.connect(impersonatedSigner).poolLength();
+    console.log("Pool Length:- "+tx);
+    // expect(await autoFarmContract.AUTO()).to.equal("0x4508ABB72232271e452258530D4Ed799C685eccb");
+  });
+
 
 });
