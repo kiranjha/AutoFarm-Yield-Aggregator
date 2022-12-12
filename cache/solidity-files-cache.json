@@ -48,8 +48,8 @@
       ]
     },
     "D:\\Rapid Innovation join 16th Aug 2022\\1. Rapid Innovation join 1st Dec 2022\\hardhat-Farm\\contracts\\Farm.sol": {
-      "lastModificationDate": 1670829307187,
-      "contentHash": "ac44a668f8ee578b4fd30265d7a00173",
+      "lastModificationDate": 1670834003027,
+      "contentHash": "13972e5f05ab9458ebd346b4cac6314e",
       "sourceName": "contracts/Farm.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -80,8 +80,40 @@
       ],
       "artifacts": [
         "AutoFarm",
-        "Farm"
+        "Farm",
+        "IERC20"
       ]
+    },
+    "D:\\Rapid Innovation join 16th Aug 2022\\1. Rapid Innovation join 1st Dec 2022\\hardhat-Farm\\contracts\\StratX2_PCS.sol": {
+      "lastModificationDate": 1670832123305,
+      "contentHash": "d41d8cd98f00b204e9800998ecf8427e",
+      "sourceName": "contracts/StratX2_PCS.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
     }
   }
 }

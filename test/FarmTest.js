@@ -78,11 +78,26 @@ describe("AutoFarm Test Contract", function () {
   });
 
   it("5. Checking pool length.", async function () {
-
-    // var poolLen = await autoFarmContract.poolLength();
     var tx = await autoFarmContract.connect(impersonatedSigner).poolLength();
     console.log("Pool Length:- "+tx);
-    // expect(await autoFarmContract.AUTO()).to.equal("0x4508ABB72232271e452258530D4Ed799C685eccb");
+  });
+
+  it("6. Adding new LP token and check the pool length.", async () => {
+    var allocpoint = 1000;
+    var erc20Address = "0x4F814B963849C61c2f3CE247C9231A28a94086ED";
+    var booleanVal = false;
+    var startAddress = "0xbc367b25f6f512AF177Be166392370ff32284068";
+    var tx = await autoFarmContract.connect(impersonatedSigner).add(allocpoint, erc20Address, booleanVal, startAddress);
+    const reciept2 = await tx.wait();
+
+    poolLen = await autoFarmContract.connect(impersonatedSigner).poolLength();
+    console.log("Pool Length : - "+poolLen);
+
+    poolInfo = await autoFarmContract.poolInfo(715);
+    console.log("pool added info :- "+poolInfo);
+
+
+    expect(poolInfo.allocPoint).to.equal(allocpoint);
   });
 
 
