@@ -2,6 +2,7 @@
 require("dotenv").config();
 require("@nomicfoundation/hardhat-toolbox");
 require("@nomiclabs/hardhat-etherscan");
+require('dotenv').config();
 
 
 /** @type import('hardhat/config').HardhatUserConfig */
@@ -9,7 +10,10 @@ module.exports = {
   defaultNetwork: "hardhat",
   networks: {
     hardhat: {
-
+      chainId: 31337,
+      forking: {
+        url: process.env.BSC_MAINNET_RPC_URL
+      }
     },
   },
   solidity: {

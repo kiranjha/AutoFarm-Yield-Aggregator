@@ -18,13 +18,10 @@ describe("AutoFarm Test Contract", function () {
     await contractFarm.deployed();
     console.log(`My Farm deployed at address :- ${contractFarm.address}`);
 
-
     autoFarmAddress = "0x0895196562C7868C5Be92459FaE7f877ED450452";
     autoFarmContract = await ethers.getContractAt("AutoFarmV2", autoFarmAddress);
     console.log("contract Address - "+autoFarmContract.address);
 
-
-    
     var autoOwner = await contractFarm.getOwner();
     console.log(`5`);
 
@@ -32,8 +29,6 @@ describe("AutoFarm Test Contract", function () {
     console.log(`6`);
     impersonatedSigner = await ethers.getSigner(autoOwner);
     console.log(`7`);
-
-    
     var pid = 256;
     var allocpoint = 1000;
     var booleanVal = false;
@@ -41,7 +36,6 @@ describe("AutoFarm Test Contract", function () {
     const reciept2 = await tx.wait();
 
     poolInfo = await autoFarmContract.poolInfo(256);
-
 
     expect(poolInfo.allocPoint).to.equal(allocpoint);
   });
@@ -52,8 +46,6 @@ describe("AutoFarm Test Contract", function () {
     console.log(`10`);
     const reciept2 = await tx.wait();
     console.log(`11`);
-
-
     expect(await contractFarm.getOwner()).to.equal(addr1.address);
   });
   console.log(`12`);
@@ -84,21 +76,16 @@ describe("AutoFarm Test Contract", function () {
 
   it("6. Adding new LP token and check the pool length.", async () => {
     var allocpoint = 1000;
-    var erc20Address = "0x4F814B963849C61c2f3CE247C9231A28a94086ED";
+    var erc20Address = "0x4F814B963849C61c2f3CE247C9231A28a94086ED";  //metamask address
     var booleanVal = false;
-    var startAddress = "0xbc367b25f6f512AF177Be166392370ff32284068";
+    var startAddress = "0xbc367b25f6f512AF177Be166392370ff32284068";  //stratX2_PCS
     var tx = await autoFarmContract.connect(impersonatedSigner).add(allocpoint, erc20Address, booleanVal, startAddress);
     const reciept2 = await tx.wait();
-
     poolLen = await autoFarmContract.connect(impersonatedSigner).poolLength();
     console.log("Pool Length : - "+poolLen);
-
     poolInfo = await autoFarmContract.poolInfo(715);
     console.log("pool added info :- "+poolInfo);
-
-
+    console.log("USER INFO "+await autoFarmContract.connect(impersonatedSigner).userInfo(715, impersonatedSigner.address));
     expect(poolInfo.allocPoint).to.equal(allocpoint);
   });
-
-
 });
